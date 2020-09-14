@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0ugUjmDtAQ7MbvrHsjlxlt1cQj0ToS4+DTz/wR+JAer8SI4tEI+iqq6MIPi8rldTgQXLtYMJT/M2RBukb7au5A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CampHoyos\\Documents\\Rafa\\Programming\\Nuget\\FastConsole\\FastConsole\\FastConsole.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CampHoyos\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CampHoyos\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
