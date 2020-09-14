@@ -1,5 +1,5 @@
 ﻿using System;
-using FastConsole;
+using static FastConsole.Static;
 
 namespace ConsoleTest
 {
@@ -7,7 +7,7 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-            FastConsole.Print("aaa");
+            Println("Aoooba!");
             Console.WriteLine("Hello World!");
         }
     }

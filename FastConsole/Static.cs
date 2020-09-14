@@ -2,7 +2,7 @@
 
 namespace FastConsole
 {
-    public static class FastConsole
+    public static class Static
     {
         public static void Println(string value)
         {
