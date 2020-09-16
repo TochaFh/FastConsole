@@ -1,9 +1,0 @@
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\bin\Debug\netstandard2.0\FastConsole.deps.json
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\bin\Debug\netstandard2.0\FastConsole.dll
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\bin\Debug\netstandard2.0\FastConsole.pdb
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.csprojAssemblyReference.cache
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.AssemblyInfoInputs.cache
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.AssemblyInfo.cs
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.csproj.CoreCompileInputs.cache
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.dll
-C:\Users\CampHoyos\Documents\Rafa\Programming\Nuget\FastConsole\FastConsole\obj\Debug\netstandard2.0\FastConsole.pdb
