@@ -6,7 +6,7 @@ namespace ConsoleTest
 {
     class Printing
     {
-        static void Main(string[] args)
+        public static void Go()
         {
             NewLine(3);
 

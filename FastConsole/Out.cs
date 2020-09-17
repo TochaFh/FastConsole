@@ -32,13 +32,6 @@ namespace FastConsole
         public static void Print(CoolText coolText)
         {
             if (coolText == null) return;
-
-            /*ConsoleColor originalForeColor = GetForeground();
-            SetForeground(coolText.DefaultTextColor ?? originalForeColor);
-
-            ConsoleColor originalBackColor = GetBackground();
-            SetBackground(coolText.DefaultBackColor ?? originalBackColor);*/
-
             Print(coolText.CoolSnippets);
         }
         public static void Print(string value, ConsoleColor? textColor)
@@ -108,6 +101,10 @@ namespace FastConsole
         #endregion
         
         #region Other
+        /// <summary>
+        /// Prints new lines to console.
+        /// </summary>
+        /// <param name="lines">Number of lines to print.</param>
         public static void NewLine(int lines = 1)
         {
             for (int i = 0; i < lines; i++) Println();

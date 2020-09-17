@@ -7,7 +7,7 @@ namespace FastConsole
     {
         #region String
         /// <summary>
-        /// Returns a simple ColorText base on the string with no specified colors.
+        /// Returns a simple CoolSnippet with the string with no specified colors.
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -17,7 +17,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Returns a CoolText with the specified text and textColor.
+        /// Returns a CoolSnippet with the specified text and textColor.
         /// </summary>
         /// <param name="text"></param>
         /// <param name="textColor">The text color</param>
@@ -28,7 +28,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Returns an CoolText with the specified text, textColor and backColor.
+        /// Returns an CoolSnippet with the specified text, textColor and backColor.
         /// </summary>
         /// <param name="text"></param>
         /// <param name="textColor">The text color</param>
@@ -40,7 +40,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Returns a CoolText with the specified string and backColor.
+        /// Returns a CoolSnippet with the specified string and backColor.
         /// </summary>
         /// <param name="text"></param>
         /// <param name="backColor"></param>
@@ -53,7 +53,7 @@ namespace FastConsole
 
         #region CoolSnippet
         /// <summary>
-        /// Returns a new instance based on this CoolText with the specified backColor.
+        /// Returns a CoolSnippet based on this CoolSnippet with a new backColor.
         /// </summary>
         /// <param name="text">The instance of IColorText</param>
         /// <param name="backColor">New back color</param>
@@ -66,7 +66,7 @@ namespace FastConsole
 
         #region CoolText
         /// <summary>
-        /// Returns a group of CoolTexts with specified -default- text color.
+        /// Returns a CoolText with the specified default text color.
         /// * The colors inside have preference.
         /// </summary>
         /// <param name="coolText"></param>
@@ -78,7 +78,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Returns a group of CoolTexts with specified -default- colors.
+        /// Returns a CoolText with the specified default colors.
         /// * The colors inside have preference.
         /// </summary>
         /// <param name="coolText"></param>
@@ -91,7 +91,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Returns a group of CoolTexts with specified -default- back color.
+        /// Returns a CoolText with the specified default back color.
         /// * The colors inside have preference.
         /// </summary>
         /// <param name="coolText"></param>
@@ -104,33 +104,63 @@ namespace FastConsole
         #endregion
 
         #region Print/Println
+        /// <summary>
+        /// Prints the CoolText.
+        /// </summary>
+        /// <param name="text"></param>
         public static void Print(this CoolText text)
         {
             Out.Print(text);
         }
+
+        /// <summary>
+        /// 'Printlns' the CoolText.
+        /// </summary>
+        /// <param name="text"></param>
         public static void Println(this CoolText text)
         {
             Out.Println(text);
         }
+        
+        /// <summary>
+        /// Prints the CoolSnippet.
+        /// </summary>
+        /// <param name="text"></param>
         public static void Print(this CoolSnippet text)
         {
             Out.Print(text);
         }
+        
+        /// <summary>
+        /// 'Printlns' the CoolSnippet.
+        /// </summary>
+        /// <param name="text"></param>
         public static void Println(this CoolSnippet text)
         {
             Out.Println(text);
         }
+        
+        /// <summary>
+        /// Prints the value of the string and returns it (the string).
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static string Print(this string text)
         {
             Out.Print(text);
             return text;
         }
+        
+        /// <summary>
+        /// 'Printlns' the value of the string and returns it (the string).
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
         public static string Println(this string text)
         {
             Out.Println(text);
             return text;
         }
         #endregion
-
     }
 }
