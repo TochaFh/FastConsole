@@ -2,6 +2,10 @@ using System;
 
 namespace FastConsole
 {
+    /// <summary>
+    /// The base interface for Printer.
+    /// Use for printing values to the console with predefined colors.
+    /// </summary>
     public interface IPrinter
     {
         /// <summary>

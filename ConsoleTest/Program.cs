@@ -1,4 +1,5 @@
-using FastConsole;
+using System;
+using static FastConsole.Out;
 
 namespace ConsoleTest
 {

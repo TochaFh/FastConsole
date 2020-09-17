@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace FastConsole
 {
+    /// <summary>
+    /// The extension class of FastConsole. Focused in strings, CoolSnippets and CoolTexts conversions and shortcuts.
+    /// </summary>
     public static class FcExtensions
     {
         #region String

@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace FastConsole
 {
+    /// <summary>
+    /// A part of text with one specified text color and one back color.
+    /// </summary>
     public sealed class CoolSnippet : ICoolSnippet
     {
         #region Constructors
@@ -24,19 +27,16 @@ namespace FastConsole
         public ConsoleColor? TextColor { get; set; } = null;
         public ConsoleColor? BackColor { get; set; } = null;
 
-
-        /// <summary>
-        /// Returns the Text (CoolSnippet.Text) of this instance of CoolSnippet.
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString() => this.Text;
-
         internal CoolSnippet WithDefaultColors(ConsoleColor? defTextColor, ConsoleColor? defBackColor)
         {
             return new CoolSnippet(this.Text, TextColor ?? defTextColor, BackColor ?? defBackColor);
         }
 
         #region Operators
+        /// <summary>
+        /// Creates a simple CoolSnippet with the string.
+        /// </summary>
+        /// <param name="text"></param>
         public static implicit operator CoolSnippet(string text) => new CoolSnippet(text);
 
         /// <summary>
@@ -72,5 +72,11 @@ namespace FastConsole
             return (CoolText)(new[] { a }.Concat(b.CoolSnippets).ToArray());
         }
         #endregion
+
+        /// <summary>
+        /// Returns the Text (CoolSnippet.Text) of this instance of CoolSnippet.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString() => this.Text;
     }
 }

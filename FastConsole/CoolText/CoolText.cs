@@ -4,6 +4,10 @@ using System.Text;
 
 namespace FastConsole
 {
+    /// <summary>
+    /// Represents a super cool text with many colors!
+    /// A group of CoolSnippets.
+    /// </summary>
     public sealed class CoolText
     {
         #region Constructors
@@ -31,7 +35,16 @@ namespace FastConsole
         }
 
         #region Operators
+        /// <summary>
+        /// Creates a CoolText with the specified CoolSnippets in the array.
+        /// </summary>
+        /// <param name="array"></param>
         public static implicit operator CoolText(CoolSnippet[] array) => new CoolText(array);
+
+        /// <summary>
+        /// Creates a CoolText with the specified CoolSnippet.
+        /// </summary>
+        /// <param name="coolSnippet"></param>
         public static explicit operator CoolText(CoolSnippet coolSnippet) => new CoolText(coolSnippet);
 
         /// <summary>
