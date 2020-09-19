@@ -5,9 +5,12 @@
 
     <!-- NuGet package -->
     <PackageId>FastConsole</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>Rafael Hoyos</Authors>
     <Company>TochaFh</Company>
+    <PackageIcon>icon.png</PackageIcon>
+    <Description>It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short syntaxes!</Description>
+    <PackageTags>fast console print println log color colors colored cool</PackageTags>
 
   </PropertyGroup>
 
