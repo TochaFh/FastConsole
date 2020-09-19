@@ -1,15 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\FastConsole\FastConsole.csproj" />
+    <!-- <ProjectReference Include="..\FastConsole\FastConsole.csproj" /> -->
+    <PackageReference Include="FastConsole" Version="1.1.0" />
   </ItemGroup>
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-
-    <!-- <RestoreSources>$(RestoreSources); -path- ;https://api.nuget.org/v3/index.json</RestoreSources> -->
-
   </PropertyGroup>
 
 </Project>
