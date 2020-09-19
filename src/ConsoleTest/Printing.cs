@@ -14,7 +14,7 @@ namespace ConsoleTest
 
             NewLine(2);
 
-            var text = "Hellooo! ".I(Magenta) + "How are " + "you".On(Green) + "!"; // var = CoolText
+            var text = "Hellooo! ".I(Magenta) + "How are " + "you".On(Green) + "!"; // var => CoolText
             Println(text);
 
             NewLine();
@@ -41,7 +41,7 @@ namespace ConsoleTest
             IPrinter error = new Printer(DarkRed, Gray); // text color, back color
             error.Println("This is an error!");
 
-            CoolText errorText = new[] { "This is an ", "ERROR".On(Black), " too!" }; // more one syntax...
+            CoolText errorText = new[] { "This is an ", "ERROR".On(Black), " too!" }; // anooother syntax...
 
             error.Println(errorText); // Unspecified colors of 'errorText' will follow 'error' defaults! -- Same as: Out.Print(errorText.I(Red, Black));
 

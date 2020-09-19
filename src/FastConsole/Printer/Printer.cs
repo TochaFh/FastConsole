@@ -6,7 +6,7 @@ namespace FastConsole
     /// The main implementation of IPrinter.
     /// Use for printing values to the console with predefined colors.
     /// </summary>
-    public sealed class Printer : IPrinter
+    public class Printer : IPrinter
     {
         #region Constructors
         public Printer() { }
