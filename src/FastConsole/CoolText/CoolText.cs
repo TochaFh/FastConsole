@@ -14,7 +14,7 @@ namespace FastConsole
         /// <summary>
         /// Creates a new instance of CoolText with the specified CoolSnippets.
         /// </summary>
-        /// <param name="coolTexts"></param>
+        /// <param name="coolSnippets"></param>
         public CoolText(params CoolSnippet[] coolSnippets)
         {
             CoolSnippets = coolSnippets ?? throw new System.ArgumentNullException("coolSnippets");

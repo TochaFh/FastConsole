@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+
     <TargetFramework>netstandard2.0</TargetFramework>
 
     <!-- NuGet package -->
     <PackageId>FastConsole</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>Rafael Hoyos</Authors>
     <Company>TochaFh</Company>
     <RepositoryUrl>https://github.com/TochaFh/FastConsole</RepositoryUrl>
@@ -15,6 +16,9 @@
     <PackageTags>fast console print println log color colors colored cool</PackageTags>
     <PackageProjectUrl>https://github.com/TochaFh/FastConsole</PackageProjectUrl>
     <Copyright>Copyright © 2020 Rafael Hoyos</Copyright>
+
+    <!-- Xml documentation to work -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
   </PropertyGroup>
 
