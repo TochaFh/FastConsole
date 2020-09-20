@@ -23,8 +23,22 @@ namespace FastConsole
         }
         #endregion
 
+        /// <summary>
+        /// The string text.
+        /// </summary>
+        /// <value></value>
         public string Text { get; set; }
+
+        /// <summary>
+        /// The font color. (ForegroundColor)
+        /// </summary>
+        /// <value></value>
         public ConsoleColor? TextColor { get; set; } = null;
+
+        /// <summary>
+        /// The color behind the text. (BackgroundColor)
+        /// </summary>
+        /// <value></value>
         public ConsoleColor? BackColor { get; set; } = null;
 
         internal CoolSnippet WithDefaultColors(ConsoleColor? defTextColor, ConsoleColor? defBackColor)
