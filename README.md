@@ -1,22 +1,22 @@
 # FastConsole - Library for .NET
-It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short syntaxes!
+It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short methods!
 
 ## Install
 * Package Reference
 ```csproj
-<PackageReference Include="FastConsole" Version="1.1.1" />
+<PackageReference Include="FastConsole" Version="1.1.2" />
 ```
 * Dotnet CLI
 ```
-dotnet add package FastConsole --version 1.1.1
+dotnet add package FastConsole --version 1.1.2
 ```
 * Package Manager
 ```
-Install-Package FastConsole -Version 1.1.1
+Install-Package FastConsole -Version 1.1.2
 ```
 * Paket CLI
 ```
-paket add FastConsole --version 1.1.1
+paket add FastConsole --version 1.1.2
 ```
 ## Quickstart - Examples
 * Using
@@ -52,7 +52,7 @@ Println("The text is: " + text.I(Yellow) + "\nThe end!");
 var message = ("Let's go!\n" + ("Read this message: " + text).I(Blue) + "\n" + ("Now, read other message: " + "This".On(Green) + " is the " + "way".I(Red) + "!").On(Black) + "\n").I(Yellow);
 Println(message + "WOW!!!");
 ```
-* Other syntaxes
+* Other methods
 ```c#
 string str = "It's over Anakin!";
 str.Print();
