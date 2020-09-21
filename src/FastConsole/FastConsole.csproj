@@ -9,6 +9,7 @@
     <Version>1.1.2</Version>
     <Authors>Rafael Hoyos</Authors>
     <Company>TochaFh</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/TochaFh/FastConsole</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://github.com/TochaFh/FastConsole/blob/master/src/FastConsole/icon.png?raw=true</PackageIconUrl>
