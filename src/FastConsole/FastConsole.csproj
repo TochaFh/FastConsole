@@ -13,7 +13,7 @@
     <RepositoryUrl>https://github.com/TochaFh/FastConsole</RepositoryUrl>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://github.com/TochaFh/FastConsole/blob/master/src/FastConsole/icon.png?raw=true</PackageIconUrl>
-    <Description>It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short syntaxes!</Description>
+    <Description>It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short methods!</Description>
     <PackageTags>fast console print println log color colors colored cool</PackageTags>
     <PackageProjectUrl>https://github.com/TochaFh/FastConsole</PackageProjectUrl>
     <Copyright>Copyright © 2020 Rafael Hoyos</Copyright>
