@@ -23,17 +23,6 @@ namespace FastConsole
         
         internal CoolSnippet[] CoolSnippets { get; private set; }
 
-        /// <summary>
-        /// Returns the concatenated (string) text of all CoolSnippets in this instance of CoolText.
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (var snippet in CoolSnippets) sb.Append(snippet.Text);
-            return sb.ToString();
-        }
-
         #region Operators
         /// <summary>
         /// Creates a CoolText with the specified CoolSnippets in the array.
@@ -45,7 +34,7 @@ namespace FastConsole
         /// Creates a CoolText with the specified CoolSnippet.
         /// </summary>
         /// <param name="coolSnippet"></param>
-        public static explicit operator CoolText(CoolSnippet coolSnippet) => new CoolText(coolSnippet);
+        public static implicit operator CoolText(CoolSnippet coolSnippet) => new CoolText(coolSnippet);
 
         /// <summary>
         /// Returns a CoolText containing all CoolSnippets of two CoolTexts.
@@ -75,5 +64,16 @@ namespace FastConsole
         public static CoolText operator +(string a, CoolText b) => a.I() + b;
 
         #endregion
+
+        /// <summary>
+        /// Returns the concatenated (string) text of all CoolSnippets in this instance of CoolText.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var snippet in CoolSnippets) sb.Append(snippet.Text);
+            return sb.ToString();
+        }
     }
 }
