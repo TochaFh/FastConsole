@@ -65,3 +65,5 @@ text.Println();
 text = new CoolText("Don't", "try ".I(Magenta), "it.");
 text.Print();
 ```
+## See too
+* (FastConsole.Input)[https://github.com/TochaFh/FastConsole.Input]
