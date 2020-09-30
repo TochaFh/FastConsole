@@ -1,6 +1,6 @@
 # FastConsole - Library for .NET
 It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short methods!
-
+* [nuget.org](https://www.nuget.org/packages/FastConsole/)
 ## Install
 * Package Reference
 ```csproj
@@ -65,3 +65,5 @@ text.Println();
 text = new CoolText("Don't", "try ".I(Magenta), "it.");
 text.Print();
 ```
+## See too
+* [FastConsole.Input](https://github.com/TochaFh/FastConsole.Input)
