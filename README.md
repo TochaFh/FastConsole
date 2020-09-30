@@ -4,19 +4,19 @@ It's never been so easy to print messages to the console. With FastConsole you c
 ## Install
 * Package Reference
 ```csproj
-<PackageReference Include="FastConsole" Version="1.1.2" />
+<PackageReference Include="FastConsole" Version="1.2.0" />
 ```
 * Dotnet CLI
 ```
-dotnet add package FastConsole --version 1.1.2
+dotnet add package FastConsole --version 1.2.0
 ```
 * Package Manager
 ```
-Install-Package FastConsole -Version 1.1.2
+Install-Package FastConsole -Version 1.2.0
 ```
 * Paket CLI
 ```
-paket add FastConsole --version 1.1.2
+paket add FastConsole --version 1.2.0
 ```
 ## Quickstart - Examples
 * Using
