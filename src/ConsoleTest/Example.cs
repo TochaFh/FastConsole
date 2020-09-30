@@ -4,7 +4,7 @@ using static FastConsole.Out;
 
 namespace ConsoleTest
 {
-    class Printing
+    class Example
     {
         public static void Go()
         {

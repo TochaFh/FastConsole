@@ -8,6 +8,8 @@ namespace FastConsole
     /// </summary>
     public static class Out
     {
+        private static readonly object lockP = new object();
+
         #region Print
         /// <summary>
         /// Writes the specified string value to console.
@@ -16,7 +18,10 @@ namespace FastConsole
         /// <param name="value"></param>
         public static void Print(string value)
         {
-            Console.Write(value);
+            lock (lockP)
+            {
+                Console.Write(value);
+            }
         }
 
         /// <summary>
@@ -25,18 +30,21 @@ namespace FastConsole
         /// <param name="text"></param>
         public static void Print(CoolSnippet text)
         {
-            if (text == null) return;
+            lock (lockP)
+            {
+                if (text == null) return;
 
-            ConsoleColor previousForeColor = GetForeground();
-            SetForeground(text.TextColor ?? previousForeColor);
+                ConsoleColor previousForeColor = GetForeground();
+                SetForeground(text.TextColor ?? previousForeColor);
 
-            ConsoleColor previousBackColor = GetBackground();
-            SetBackground(text.BackColor ?? previousBackColor);
+                ConsoleColor previousBackColor = GetBackground();
+                SetBackground(text.BackColor ?? previousBackColor);
 
-            Print(text.Text);
+                Console.Write(text.Text);
 
-            SetForeground(previousForeColor);
-            SetBackground(previousBackColor);
+                SetForeground(previousForeColor);
+                SetBackground(previousBackColor);
+            }
         }
 
         /// <summary>
@@ -45,8 +53,11 @@ namespace FastConsole
         /// <param name="totalText"></param>
         public static void Print(params CoolSnippet[] totalText)
         {
-            if (totalText == null) return;
-            foreach (var text in totalText) Print(text);
+            lock (lockP)
+            {
+                if (totalText == null) return;
+                foreach (var text in totalText) Print(text);
+            }
         }
 
         /// <summary>
@@ -55,8 +66,11 @@ namespace FastConsole
         /// <param name="coolText"></param>
         public static void Print(CoolText coolText)
         {
-            if (coolText == null) return;
-            Print(coolText.CoolSnippets);
+            lock (lockP)
+            {
+                if (coolText == null) return;
+                Print(coolText.CoolSnippets);
+            }
         }
 
         /// <summary>
@@ -66,12 +80,15 @@ namespace FastConsole
         /// <param name="textColor"></param>
         public static void Print(string value, ConsoleColor? textColor)
         {
-            ConsoleColor previousColor = GetForeground();
-            SetForeground(textColor ?? previousColor);
+            lock (lockP)
+            {
+                ConsoleColor previousColor = GetForeground();
+                SetForeground(textColor ?? previousColor);
 
-            Print(value);
+                Print(value);
 
-            SetForeground(previousColor);
+                SetForeground(previousColor);
+            }
         }
 
         /// <summary>
@@ -82,12 +99,15 @@ namespace FastConsole
         /// <param name="backColor"></param>
         public static void Print(string value, ConsoleColor? textColor, ConsoleColor? backColor)
         {
-            ConsoleColor previousBackColor = GetBackground();
-            SetBackground(backColor ?? previousBackColor);
+            lock (lockP)
+            {
+                ConsoleColor previousBackColor = GetBackground();
+                SetBackground(backColor ?? previousBackColor);
 
-            Print(value, textColor);
+                Print(value, textColor);
 
-            SetBackground(previousBackColor);
+                SetBackground(previousBackColor);
+            }
         }
 
         /// <summary>
@@ -97,7 +117,10 @@ namespace FastConsole
         /// <param name="value"></param>
         public static void Print(object value)
         {
-            Console.Write(value);
+            lock (lockP)
+            {
+                Console.Write(value);
+            }
         }
         #endregion
 
@@ -108,7 +131,10 @@ namespace FastConsole
         /// </summary>
         public static void Println()
         {
-            Console.WriteLine();
+            lock (lockP)
+            {
+                Console.WriteLine();
+            }
         }
 
         /// <summary>
@@ -118,8 +144,11 @@ namespace FastConsole
         /// <param name="value"></param>
         public static void Println(string value)
         {
-            Print(value);
-            Println();
+            lock (lockP)
+            {
+                Print(value);
+                Println();
+            }
         }
 
         /// <summary>
@@ -128,8 +157,11 @@ namespace FastConsole
         /// <param name="text"></param>
         public static void Println(CoolSnippet text)
         {
-            Print(text);
-            Println();
+            lock (lockP)
+            {
+                Print(text);
+                Println();
+            }
         }
 
         /// <summary>
@@ -138,8 +170,11 @@ namespace FastConsole
         /// <param name="totalText"></param>
         public static void Println(params CoolSnippet[] totalText)
         {
-            Print(totalText);
-            Println();
+            lock (lockP)
+            {
+                Print(totalText);
+                Println();
+            }
         }
 
         /// <summary>
@@ -148,8 +183,11 @@ namespace FastConsole
         /// <param name="coolText"></param>
         public static void Println(CoolText coolText)
         {
-            Print(coolText);
-            Println();
+            lock (lockP)
+            {
+                Print(coolText);
+                Println();
+            }
         }
 
         /// <summary>
@@ -159,8 +197,11 @@ namespace FastConsole
         /// <param name="textColor"></param>
         public static void Println(string value, ConsoleColor? textColor)
         {
-            Print(value, textColor);
-            Println();
+            lock (lockP)
+            {
+                Print(value, textColor);
+                Println();
+            }
         }
 
         /// <summary>
@@ -171,8 +212,11 @@ namespace FastConsole
         /// <param name="backColor"></param>
         public static void Println(string value, ConsoleColor? textColor, ConsoleColor? backColor)
         {
-            Print(value, textColor, backColor);
-            Println();
+            lock (lockP)
+            {
+                Print(value, textColor, backColor);
+                Println();
+            }
         }
 
         /// <summary>
@@ -182,8 +226,11 @@ namespace FastConsole
         /// <param name="value"></param>
         public static void Println(object value)
         {
-            Print(value);
-            Println();
+            lock (lockP)
+            {
+                Print(value);
+                Println();
+            }
         }
         #endregion
 
@@ -194,7 +241,10 @@ namespace FastConsole
         /// <param name="lines">Number of lines to print.</param>
         public static void NewLine(int lines = 1)
         {
-            for (int i = 0; i < lines; i++) Println();
+            lock (lockP)
+            {
+                for (int i = 0; i < lines; i++) Println();
+            }
         }
 
         /// <summary>
@@ -205,12 +255,15 @@ namespace FastConsole
         /// <param name="textColor"></param>
         public static void InvokeWithColors(Action printing, ConsoleColor textColor)
         {
-            ConsoleColor previousColor = GetForeground();
-            SetForeground(textColor);
+            lock (lockP)
+            {
+                ConsoleColor previousColor = GetForeground();
+                SetForeground(textColor);
 
-            printing?.Invoke();
+                printing?.Invoke();
 
-            SetForeground(previousColor);
+                SetForeground(previousColor);
+            }
         }
 
         /// <summary>
@@ -221,12 +274,15 @@ namespace FastConsole
         /// <param name="backColor"></param>
         public static void InvokeWithColors(Action printing, ConsoleColor textColor, ConsoleColor backColor)
         {
-            ConsoleColor previousBackColor = GetBackground();
-            SetBackground(backColor);
+            lock (lockP)
+            {
+                ConsoleColor previousBackColor = GetBackground();
+                SetBackground(backColor);
 
-            InvokeWithColors(printing, textColor);
+                InvokeWithColors(printing, textColor);
 
-            SetBackground(previousBackColor);
+                SetBackground(previousBackColor);
+            }
         }
         #endregion
 
