@@ -17,12 +17,12 @@ namespace FastConsole
         /// The font color.
         /// </summary>
         /// <value></value>
-        ConsoleColor? TextColor { get; set; }
+        FColor TextColor { get; set; }
 
         /// <summary>
         /// The color behind the text.
         /// </summary>
         /// <value></value>
-        ConsoleColor? BackColor { get; set; }
+        FColor BackColor { get; set; }
     }
 }

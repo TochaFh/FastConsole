@@ -1,8 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <!-- <ProjectReference Include="..\FastConsole\FastConsole.csproj" /> -->
-    <PackageReference Include="FastConsole" Version="1.1.3" />
+    <ProjectReference Include="..\FastConsole\FastConsole.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

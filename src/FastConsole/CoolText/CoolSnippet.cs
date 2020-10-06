@@ -13,11 +13,11 @@ namespace FastConsole
         {
             Text = text;
         }
-        internal CoolSnippet(string text, ConsoleColor? textColor) : this(text)
+        internal CoolSnippet(string text, FColor textColor) : this(text)
         {
             TextColor = textColor;
         }
-        internal CoolSnippet(string text, ConsoleColor? textColor, ConsoleColor? backColor) : this(text, textColor)
+        internal CoolSnippet(string text, FColor textColor, FColor backColor) : this(text, textColor)
         {
             BackColor = backColor;
         }
@@ -33,17 +33,17 @@ namespace FastConsole
         /// The font color. (ForegroundColor)
         /// </summary>
         /// <value></value>
-        public ConsoleColor? TextColor { get; set; } = null;
+        public FColor TextColor { get; set; } = FColor.Default;
 
         /// <summary>
         /// The color behind the text. (BackgroundColor)
         /// </summary>
         /// <value></value>
-        public ConsoleColor? BackColor { get; set; } = null;
+        public FColor BackColor { get; set; } = FColor.Default;
 
-        internal CoolSnippet WithDefaultColors(ConsoleColor? defTextColor, ConsoleColor? defBackColor)
+        internal CoolSnippet WithDefaultColors(FColor defTextColor, FColor defBackColor)
         {
-            return new CoolSnippet(this.Text, TextColor ?? defTextColor, BackColor ?? defBackColor);
+            return new CoolSnippet(this.Text, TextColor.WithDefault(defTextColor), BackColor.WithDefault(defBackColor));
         }
 
         #region Operators
@@ -85,6 +85,22 @@ namespace FastConsole
         {
             return (CoolText)(new[] { a }.Concat(b.CoolSnippets).ToArray());
         }
+
+        /// <summary>
+        /// Returns a CoolText containing the two snippets. The second is based on the string representation of object b.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static CoolText operator +(CoolSnippet a, object b) => (a + b.ToString());
+
+        /// <summary>
+        /// Returns a CoolText containing the two snippets. The first is based on the string representation of object a.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static CoolText operator +(object a, CoolSnippet b) => (a.ToString() + b);
         #endregion
 
         /// <summary>

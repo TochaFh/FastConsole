@@ -1,7 +1,6 @@
-using System;
 using System.Threading.Tasks;
 using FastConsole;
-using static System.ConsoleColor;
+using static FastConsole.FColor;
 
 namespace ConsoleTest
 {
@@ -19,7 +18,7 @@ namespace ConsoleTest
 
             IPrinter p = new Printer(DarkYellow);
 
-            p.Println("Hello " + "there ".I(Green) + ".");
+            p.Println("Hello " + "there".I(Green) + ".");
 
             await Task.Delay(3000);
             
@@ -32,7 +31,7 @@ namespace ConsoleTest
 
             IPrinter p = new Printer(Cyan);
 
-            p.Println("Hello " + "there ".I(Green) + ".");
+            p.Println("Hello " + "there".I(Green) + ".");
 
             await Task.Delay(2000);
 
@@ -45,7 +44,7 @@ namespace ConsoleTest
 
             IPrinter p = new Printer(Magenta);
 
-            p.Println("Hello " + "there ".I(Green) + ".");
+            p.Println("Hello " + "there".I(Green) + ".");
 
             await Task.Delay(4000);
 

@@ -1,5 +1,5 @@
 ﻿using FastConsole;
-using static System.ConsoleColor;
+using static FastConsole.FColor;
 using static FastConsole.Out;
 
 namespace ConsoleTest

@@ -18,7 +18,7 @@ namespace FastConsole
         /// Creates a Printer with the specified text color.
         /// </summary>
         /// <param name="textColor"></param>
-        public Printer(ConsoleColor textColor)
+        public Printer(FColor textColor)
         {
             TextColor = textColor;
         }
@@ -29,7 +29,7 @@ namespace FastConsole
         /// <param name="textColor"></param>
         /// <param name="backColor"></param>
         /// <returns></returns>
-        public Printer(ConsoleColor textColor, ConsoleColor backColor) : this(textColor)
+        public Printer(FColor textColor, FColor backColor) : this(textColor)
         {
             BackColor = backColor;
         }
@@ -39,13 +39,13 @@ namespace FastConsole
         /// The font color. (ForegroundColor)
         /// </summary>
         /// <value></value>
-        public ConsoleColor? TextColor { get; set; }
+        public FColor TextColor { get; set; } = FColor.Default;
 
         /// <summary>
         /// The color behind the text. (BackgroundColor)
         /// </summary>
         /// <value></value>
-        public ConsoleColor? BackColor { get; set; }
+        public FColor BackColor { get; set; } = FColor.Default;
 
         #region Print
 
@@ -73,6 +73,7 @@ namespace FastConsole
         /// <param name="value"></param>
         public void Print(CoolSnippet value)
         {
+            // this
             this.Print((CoolText)value);
         }
 

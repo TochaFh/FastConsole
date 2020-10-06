@@ -35,10 +35,10 @@ namespace FastConsole
                 if (text == null) return;
 
                 ConsoleColor previousForeColor = GetForeground();
-                SetForeground(text.TextColor ?? previousForeColor);
+                SetForeground(text.TextColor.MatchColor(previousForeColor));
 
                 ConsoleColor previousBackColor = GetBackground();
-                SetBackground(text.BackColor ?? previousBackColor);
+                SetBackground(text.BackColor.MatchColor(previousBackColor));
 
                 Console.Write(text.Text);
 
@@ -78,12 +78,12 @@ namespace FastConsole
         /// </summary>
         /// <param name="value"></param>
         /// <param name="textColor"></param>
-        public static void Print(string value, ConsoleColor? textColor)
+        public static void Print(string value, FColor textColor)
         {
             lock (lockP)
             {
                 ConsoleColor previousColor = GetForeground();
-                SetForeground(textColor ?? previousColor);
+                SetForeground(textColor.MatchColor(previousColor));
 
                 Print(value);
 
@@ -97,12 +97,12 @@ namespace FastConsole
         /// <param name="value"></param>
         /// <param name="textColor"></param>
         /// <param name="backColor"></param>
-        public static void Print(string value, ConsoleColor? textColor, ConsoleColor? backColor)
+        public static void Print(string value, FColor textColor, FColor backColor)
         {
             lock (lockP)
             {
                 ConsoleColor previousBackColor = GetBackground();
-                SetBackground(backColor ?? previousBackColor);
+                SetBackground(backColor.MatchColor(previousBackColor));
 
                 Print(value, textColor);
 
@@ -195,7 +195,7 @@ namespace FastConsole
         /// </summary>
         /// <param name="value"></param>
         /// <param name="textColor"></param>
-        public static void Println(string value, ConsoleColor? textColor)
+        public static void Println(string value, FColor textColor)
         {
             lock (lockP)
             {
@@ -210,7 +210,7 @@ namespace FastConsole
         /// <param name="value"></param>
         /// <param name="textColor"></param>
         /// <param name="backColor"></param>
-        public static void Println(string value, ConsoleColor? textColor, ConsoleColor? backColor)
+        public static void Println(string value, FColor textColor, FColor backColor)
         {
             lock (lockP)
             {
@@ -253,12 +253,12 @@ namespace FastConsole
         /// </summary>
         /// <param name="printing"></param>
         /// <param name="textColor"></param>
-        public static void InvokeWithColors(Action printing, ConsoleColor textColor)
+        public static void InvokeWithColors(Action printing, FColor textColor)
         {
             lock (lockP)
             {
                 ConsoleColor previousColor = GetForeground();
-                SetForeground(textColor);
+                SetForeground(textColor.MatchColor(previousColor));
 
                 printing?.Invoke();
 
@@ -272,12 +272,12 @@ namespace FastConsole
         /// <param name="printing"></param>
         /// <param name="textColor"></param>
         /// <param name="backColor"></param>
-        public static void InvokeWithColors(Action printing, ConsoleColor textColor, ConsoleColor backColor)
+        public static void InvokeWithColors(Action printing, FColor textColor, FColor backColor)
         {
             lock (lockP)
             {
                 ConsoleColor previousBackColor = GetBackground();
-                SetBackground(backColor);
+                SetBackground(backColor.MatchColor(previousBackColor));
 
                 InvokeWithColors(printing, textColor);
 

@@ -63,6 +63,22 @@ namespace FastConsole
         /// <returns></returns>
         public static CoolText operator +(string a, CoolText b) => a.I() + b;
 
+        /// <summary>
+        /// Returns a cooltext containig the (left) CoolText snippets and a snippet based on the string representation of object b.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static CoolText operator +(CoolText a, object b) => a + b.ToString();
+        
+        /// <summary>
+        /// Returns a cooltext containig a snippet based on the string representation of object a and the (right) CoolText snippets and.
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static CoolText operator +(object a, CoolText b) => a.ToString() + b;
+
         #endregion
 
         /// <summary>

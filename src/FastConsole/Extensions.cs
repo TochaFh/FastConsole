@@ -10,7 +10,7 @@ namespace FastConsole
     {
         #region String
         /// <summary>
-        /// Returns a simple CoolSnippet with the string with no specified colors.
+        /// Returns a simple CoolSnippet with the string and no specified colors.
         /// </summary>
         /// <param name="text"></param>
         /// <returns></returns>
@@ -25,7 +25,7 @@ namespace FastConsole
         /// <param name="text"></param>
         /// <param name="textColor">The text color</param>
         /// <returns></returns>
-        public static CoolSnippet I(this string text, ConsoleColor? textColor)
+        public static CoolSnippet I(this string text, FColor textColor)
         {
             return new CoolSnippet(text, textColor);
         }
@@ -37,7 +37,7 @@ namespace FastConsole
         /// <param name="textColor">The text color</param>
         /// <param name="backColor">The back color</param>
         /// <returns></returns>
-        public static CoolSnippet I(this string text, ConsoleColor? textColor, ConsoleColor? backColor)
+        public static CoolSnippet I(this string text, FColor textColor, FColor backColor)
         {
             return new CoolSnippet(text, textColor, backColor);
         }
@@ -48,20 +48,77 @@ namespace FastConsole
         /// <param name="text"></param>
         /// <param name="backColor"></param>
         /// <returns></returns>
-        public static CoolSnippet On(this string text, ConsoleColor? backColor)
+        public static CoolSnippet On(this string text, FColor backColor)
         {
             return new CoolSnippet(text) { BackColor = backColor };
         }
         #endregion
 
+        #region ValueType
+        /// <summary>
+        /// Returns a simple CoolSnippet with the string representation of this value and no specified colors.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static CoolSnippet I(this ValueType text)
+        {
+            return new CoolSnippet(text.ToString());
+        }
+
+        /// <summary>
+        /// Returns a CoolSnippet with the string representation of this value and the specified textColor.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="textColor">The text color</param>
+        /// <returns></returns>
+        public static CoolSnippet I(this ValueType text, FColor textColor)
+        {
+            return new CoolSnippet(text.ToString(), textColor);
+        }
+
+        /// <summary>
+        /// Returns an CoolSnippet with the string representation of this value and the specified textColor and backColor.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="textColor">The text color</param>
+        /// <param name="backColor">The back color</param>
+        /// <returns></returns>
+        public static CoolSnippet I(this ValueType text, FColor textColor, FColor backColor)
+        {
+            return new CoolSnippet(text.ToString(), textColor, backColor);
+        }
+
+        /// <summary>
+        /// Returns a CoolSnippet with the string representation of this value and the specified backColor.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="backColor"></param>
+        /// <returns></returns>
+        public static CoolSnippet On(this ValueType text, FColor backColor)
+        {
+            return new CoolSnippet(text.ToString()) { BackColor = backColor };
+        }
+        #endregion
+
         #region CoolSnippet
+        /// <summary>
+        /// Returns a CoolSnippet based on this CoolSnippet with a new textColor.
+        /// </summary>
+        /// <param name="text">The instance of IColorText</param>
+        /// <param name="textColor">New text color</param>
+        /// <returns></returns>
+        public static CoolSnippet I(this CoolSnippet text, FColor textColor)
+        {
+            return new CoolSnippet(text.Text, textColor, text.BackColor);
+        }
+
         /// <summary>
         /// Returns a CoolSnippet based on this CoolSnippet with a new backColor.
         /// </summary>
         /// <param name="text">The instance of IColorText</param>
         /// <param name="backColor">New back color</param>
         /// <returns></returns>
-        public static CoolSnippet On(this CoolSnippet text, ConsoleColor? backColor)
+        public static CoolSnippet On(this CoolSnippet text, FColor backColor)
         {
             return new CoolSnippet(text.Text, text.TextColor, backColor);
         }
@@ -75,9 +132,9 @@ namespace FastConsole
         /// <param name="coolText"></param>
         /// <param name="textColor"></param>
         /// <returns></returns>
-        public static CoolText I(this CoolText coolText, ConsoleColor? textColor)
+        public static CoolText I(this CoolText coolText, FColor textColor)
         {
-            return (CoolText)coolText.CoolSnippets.Select(x => x.WithDefaultColors(textColor, null)).ToArray();
+            return (CoolText)coolText.CoolSnippets.Select(x => x.WithDefaultColors(textColor, FColor.Default)).ToArray();
         }
 
         /// <summary>
@@ -88,7 +145,7 @@ namespace FastConsole
         /// <param name="textColor"></param>
         /// <param name="backColor"></param>
         /// <returns></returns>
-        public static CoolText I(this CoolText coolText, ConsoleColor? textColor, ConsoleColor? backColor)
+        public static CoolText I(this CoolText coolText, FColor textColor, FColor backColor)
         {
             return (CoolText)coolText.CoolSnippets.Select(x => x.WithDefaultColors(textColor, backColor)).ToArray();
         }
@@ -100,9 +157,9 @@ namespace FastConsole
         /// <param name="coolText"></param>
         /// <param name="backColor"></param>
         /// <returns></returns>
-        public static CoolText On(this CoolText coolText, ConsoleColor? backColor)
+        public static CoolText On(this CoolText coolText, FColor backColor)
         {
-            return (CoolText)coolText.CoolSnippets.Select(x => x.WithDefaultColors(null, backColor)).ToArray();
+            return (CoolText)coolText.CoolSnippets.Select(x => x.WithDefaultColors(FColor.Default, backColor)).ToArray();
         }
         #endregion
 
