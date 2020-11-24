@@ -8,11 +8,17 @@ namespace FastConsole
     /// </summary>
     public static class Out
     {
+        /// <summary>
+        /// Gets or sets the main output used by this class. The default implementation is 'SystemConsoleOutput'.
+        /// </summary>
+        /// <returns></returns>
+        public static IOutput Output { get; set; } = new SystemConsoleOutput();
+
         private static readonly object lockP = new object();
 
         #region Print
         /// <summary>
-        /// Writes the specified string value to console.
+        /// Writes the specified string value to output.
         /// *Equivalent to Console.Write(string value)
         /// </summary>
         /// <param name="value"></param>
@@ -20,7 +26,7 @@ namespace FastConsole
         {
             lock (lockP)
             {
-                Console.Write(value);
+                Output.Write(value);
             }
         }
 
@@ -92,7 +98,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Prints the string value with the specified colors.
+        /// Prints the string representation of the value with the specified colors.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="textColor"></param>
@@ -111,7 +117,7 @@ namespace FastConsole
         }
 
         /// <summary>
-        /// Writes the string representation of the specified object value to console.
+        /// Writes the string representation of the specified object value to output.
         /// *Equivalent to Console.Write(object value)
         /// </summary>
         /// <param name="value"></param>
@@ -119,7 +125,44 @@ namespace FastConsole
         {
             lock (lockP)
             {
-                Console.Write(value);
+                Output.Write(value);
+            }
+        }
+
+        /// <summary>
+        /// Prints the string representation of the value with the specified text color.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="textColor"></param>
+        public static void Print(object value, FColor textColor)
+        {
+            lock (lockP)
+            {
+                ConsoleColor previousColor = GetForeground();
+                SetForeground(textColor.MatchColor(previousColor));
+
+                Print(value);
+
+                SetForeground(previousColor);
+            }
+        }
+
+        /// <summary>
+        /// Prints the string value with the specified colors.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="textColor"></param>
+        /// <param name="backColor"></param>
+        public static void Print(object value, FColor textColor, FColor backColor)
+        {
+            lock (lockP)
+            {
+                ConsoleColor previousBackColor = GetBackground();
+                SetBackground(backColor.MatchColor(previousBackColor));
+
+                Print(value, textColor);
+
+                SetBackground(previousBackColor);
             }
         }
         #endregion
@@ -133,12 +176,12 @@ namespace FastConsole
         {
             lock (lockP)
             {
-                Console.WriteLine();
+                Output.WriteLine();
             }
         }
 
         /// <summary>
-        /// Writes the specified string value to console, followed by the current line terminator.
+        /// Writes the specified string value to output, followed by the current line terminator.
         /// *Equivalent to Console.WriteLine(string value)
         /// </summary>
         /// <param name="value"></param>
@@ -146,8 +189,7 @@ namespace FastConsole
         {
             lock (lockP)
             {
-                Print(value);
-                Println();
+                Output.WriteLine(value);
             }
         }
 
@@ -228,7 +270,35 @@ namespace FastConsole
         {
             lock (lockP)
             {
-                Print(value);
+                Output.WriteLine(value);
+            }
+        }
+
+        /// <summary>
+        /// 'Printlns' the string value with the specified text color.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="textColor"></param>
+        public static void Println(object value, FColor textColor)
+        {
+            lock (lockP)
+            {
+                Print(value, textColor);
+                Println();
+            }
+        }
+
+        /// <summary>
+        /// 'Printlns' the string value with the specified colors.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="textColor"></param>
+        /// <param name="backColor"></param>
+        public static void Println(object value, FColor textColor, FColor backColor)
+        {
+            lock (lockP)
+            {
+                Print(value, textColor, backColor);
                 Println();
             }
         }
@@ -289,19 +359,19 @@ namespace FastConsole
         #region Private
         private static ConsoleColor GetForeground()
         {
-            return Console.ForegroundColor;
+            return Output.ForegroundColor;
         }
         private static void SetForeground(ConsoleColor color)
         {
-            Console.ForegroundColor = color;
+            Output.ForegroundColor = color;
         }
         private static ConsoleColor GetBackground()
         {
-            return Console.BackgroundColor;
+            return Output.BackgroundColor;
         }
         private static void SetBackground(ConsoleColor color)
         {
-            Console.BackgroundColor = color;
+            Output.BackgroundColor = color;
         }
         #endregion
     }

@@ -18,7 +18,7 @@ namespace FastConsole
         /// Creates a Printer with the specified text color.
         /// </summary>
         /// <param name="textColor"></param>
-        public Printer(FColor textColor)
+        public Printer(FColor textColor) : this()
         {
             TextColor = textColor;
         }

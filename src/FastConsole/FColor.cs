@@ -97,13 +97,13 @@ namespace FastConsole
         /// Represents the color of the Console, that is, when you print something
         /// with FColor.Console specified, the method will print the text with the current color of the console.
         /// </summary>
-        Console = 17
+        CConsole = 17
     }
     internal static class FColorExtensions
     {
         internal static ConsoleColor MatchColor(this FColor fColor, ConsoleColor console)
         {
-            if (fColor == FColor.Default || fColor == FColor.Console) return console;
+            if (fColor == FColor.Default || fColor == FColor.CConsole) return console;
             else return (ConsoleColor)fColor;
         }
 

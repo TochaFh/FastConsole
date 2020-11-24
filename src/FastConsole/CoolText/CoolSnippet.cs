@@ -6,7 +6,7 @@ namespace FastConsole
     /// <summary>
     /// A part of text with one specified text color and one back color.
     /// </summary>
-    public sealed class CoolSnippet : ICoolSnippet
+    public sealed class CoolSnippet
     {
         #region Constructors
         internal CoolSnippet(string text)
