@@ -4,25 +4,20 @@ It's never been so easy to print messages to the console. With FastConsole you c
 ## Install
 * Package Reference
 ```csproj
-<PackageReference Include="FastConsole" Version="2.0.0" />
+<PackageReference Include="FastConsole" Version="3.0.0" />
 ```
 * Dotnet CLI
 ```
-dotnet add package FastConsole --version 2.0.0
+dotnet add package FastConsole --version 3.0.0
 ```
 * Package Manager
 ```
-Install-Package FastConsole -Version 2.0.0
+Install-Package FastConsole -Version 3.0.0
 ```
 * Paket CLI
 ```
-paket add FastConsole --version 2.0.0
+paket add FastConsole --version 3.0.0
 ```
-
-## Version 2.0.0 - News
-* **FColor** - A special enum for colors was created. It specifies the ConsoleColor constants in addition to the 'Default' and 'Console' values.
-* **New operators** - Now _CoolText_ supports operations with _object_.
-* **ValueTypes snippets** - The extension methods _I_ and _On_ can be used with _ValueTypes_ now.
 
 ## Quickstart - Examples
 * Using
@@ -71,5 +66,5 @@ text.Println();
 text = new CoolText("Don't", "try ".I(Magenta), "it.");
 text.Print();
 ```
-## See too
+## Wow
 * [FastConsole.Input](https://github.com/TochaFh/FastConsole.Input)
