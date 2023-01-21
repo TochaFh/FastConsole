@@ -1,6 +1,7 @@
 # FastConsole - Library for .NET
 It's never been so easy to print messages to the console. With FastConsole you can print simple values or super cool text with multiple colors. You can do all of this with easy and short methods!
-* [nuget.org](https://www.nuget.org/packages/FastConsole/)
+* [NuGet Page](https://www.nuget.org/packages/FastConsole/)
+* [FuGet Package Explorer](https://www.fuget.org/packages/FastConsole/3.0.0)
 ## Install
 * Package Reference
 ```csproj
